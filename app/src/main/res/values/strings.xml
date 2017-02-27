@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <!-- 上拉下拉 -->
+    <string name="txt_before_refresh">下拉刷新</string>
+    <string name="txt_before_load">上拉加载</string>
+    <string name="txt_loose_refresh">松开刷新</string>
+    <string name="txt_loose_load">松开加载</string>
+    <string name="txt_refreshing">刷新数据中…</string>
+    <string name="txt_loading">加载中…</string>
+    <string name="txt_refreshed">完成刷新</string>
+    <string name="txt_loaded">完成加载</string>
+    <string name="txt_loaded_full">求你别拉了，没有啦~</string>
+</resources>

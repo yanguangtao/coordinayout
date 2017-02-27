@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frame_foot"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/swipe_widget_height">
+
+    <!-- 上拉尾部布局 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/swipe_widget_height">
+    <!-- 加载中 -->
+    <TextView
+        android:id="@+id/txt_loading"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:text="@string/txt_loading"
+        tools:ignore="RelativeOverlap" />
+
+    <!-- 箭头 -->
+    <ImageView
+        android:id="@+id/img_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/txt_loading"
+        android:layout_toStartOf="@id/txt_loading"
+        android:src="@mipmap/ic_swipe_arrow"
+        tools:ignore="ContentDescription" />
+
+    <!-- 菊花 -->
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/txt_loading"
+        android:layout_toStartOf="@id/txt_loading"
+        android:indeterminateDrawable="@drawable/rcy_progressbar" />
+
+    <!-- 没有更多 -->
+    <TextView
+        android:id="@+id/txt_no_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/txt_loaded_full"
+        tools:ignore="RelativeOverlap" />
+    </RelativeLayout>
+</RelativeLayout>

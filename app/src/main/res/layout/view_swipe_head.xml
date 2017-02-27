@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/swipe_widget_height">
+
+    <!-- 下拉头 -->
+
+    <!-- 文本 -->
+    <TextView
+        android:id="@+id/txt_refresh_head"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+        android:text="@string/txt_before_refresh" />
+
+    <!-- 箭头 -->
+    <ImageView
+        android:id="@+id/img_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/txt_refresh_head"
+        android:layout_toStartOf="@id/txt_refresh_head"
+        android:src="@mipmap/ic_swipe_arrow"
+        tools:ignore="ContentDescription" />
+
+    <!-- 菊花 -->
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/txt_refresh_head"
+        android:layout_toStartOf="@id/txt_refresh_head"
+        android:indeterminateDrawable="@drawable/rcy_progressbar" />
+</RelativeLayout>

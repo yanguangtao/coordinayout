@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 设置好参数的上拉尾部，添加于封装的控件中 -->
+<com.coordinayout.tgy.myapplication.view.SwipeFootView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipe_load_more_footer"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/swipe_widget_height" />

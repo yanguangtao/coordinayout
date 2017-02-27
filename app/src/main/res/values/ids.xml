@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 刷新目标 -->
+    <item name="swipe_target" type="id" />
+    <!-- 刷新头部 -->
+    <item name="swipe_refresh_header" type="id" />
+    <!-- 刷新尾部 -->
+    <item name="swipe_load_more_footer" type="id" />
+</resources>
