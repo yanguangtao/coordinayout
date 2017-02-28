@@ -4,7 +4,7 @@
 我们这里要解决的问题是滑动刷新和加载的手势冲突
 这里先上效果图
 
-![image](https://github.com/yanguangtao/coordinayout/tree/master/screenshots/20170227213141140.gif)
+![image](https://github.com/yanguangtao/coordinayout/raw/master/screenshots/20170227213141140.gif)
 
 布局如下，分四个模块，
 SwipeRefresh
