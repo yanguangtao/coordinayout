@@ -4,7 +4,7 @@
 我们这里要解决的问题是滑动刷新和加载的手势冲突
 这里先上效果图
 
-![image](https://github.com/yanguangtao/coordinayout/screenshots/20170227213141140.gif)
+![image](https://github.com/yanguangtao/coordinayout/tree/master/screenshots/20170227213141140.gif)
 
 布局如下，分四个模块，
 SwipeRefresh
@@ -81,18 +81,18 @@ MagicIndicator是用的一个开源的控件
 好了进入正题
 首先解决的第一个问题就是下拉刷新时，有可能Appbar还没有被覆盖的地方，所以这里我们刷新的时候要监听AppBarLayout的滑动
 
-![image](https://github.com/yanguangtao/coordinayout/screenshots/QQ截图20170228103908.png)
+![image](https://github.com/yanguangtao/coordinayout/tree/master/screenshots/QQ截图20170228103908.png)
 
 这里我们监听了appBar的偏移量，可以看到这里用了两个条件，一个是AppBar的偏移量一个是当前recyclerView是否在顶部，因为可能出现的问题是recycle不在顶部，然后能刷新的情况。
 
 这里介绍几种常用的判断Recyler到达底部的方法
 第一种也是网上用的最多的一种，屏幕中最后一个子项lastVisibleItemPosition等于所有子项个数totalItemCount - 1，那么RecyclerView就到达了底部， 代码如下：
 
-![image](https://github.com/yanguangtao/coordinayout/screenshots/QQ截图20170228104436.png)
+![image](https://github.com/yanguangtao/coordinayout/tree/master/screenshots/QQ截图20170228104436.png)
 
 第二种是view自带的，computeVerticalScrollExtent()是当前屏幕显示的区域高度，computeVerticalScrollOffset() 是当前屏幕之前滑过的距离，而computeVerticalScrollRange()是整个View控件的高度。
 
-![image](https://github.com/yanguangtao/coordinayout/screenshots/QQ截图20170228105026.png)
+![image](https://github.com/yanguangtao/coordinayout/tree/master/screenshots/QQ截图20170228105026.png)
 
 第三种就是Recycer自带的，也是我们项目中用的
 RecyclerView.canScrollVertically(1)的值表示是否能向上滚动，false表示已经滚动到底部
@@ -102,7 +102,7 @@ RecyclerView.canScrollVertically(-1)的值表示是否能向下滚动，false表
 
 下面我们处理加载更多的问题。 因为我们要及时监听Rcycler是否到达了底部，所以我们给Recycler 添加一个滚动监听，代码如下：
 
-![image](https://github.com/yanguangtao/coordinayout/screenshots/QQ截图20170228105221.png)
+![image](https://github.com/yanguangtao/coordinayout/tree/master/screenshots/QQ截图20170228105221.png)
 
 
 
@@ -110,7 +110,7 @@ RecyclerView.canScrollVertically(-1)的值表示是否能向下滚动，false表
 到这里问题应该解决了，但是在测试的时候发现，加载更多还是会出现问题，第一个页面加载更多后，第二个页面没到底部就能加载更多。
 这个跟我用的这个刷新有点关系，在刷新后，虽然数据被添加到Recycler中了，此时没有滑动Recycler 所以，Swipe的状态是还可以加载更多。所以这个时候切换页面直接就变成可以加载更多了
 
-![image](https://github.com/yanguangtao/coordinayout/screenshots/QQ截图20170228105357.png)
+![image](https://github.com/yanguangtao/coordinayout/tree/master/screenshots/QQ截图20170228105357.png)
 
 所以，在数据加载完成后我们设置loadMoreEnable(false)
 
